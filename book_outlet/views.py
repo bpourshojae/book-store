@@ -7,12 +7,12 @@ def index(request):
     books = Book.objects.all()
     return render(request, 'book_outlet/index.html', {'books':books})
 
-def book_detail(request, ide):
+def book_detail(request, slug):
     # try:    
     #     book = Book.objects.get(id=ide)
     # except:
     #     raise Http404()  
-    book = get_object_or_404(Book, id=ide)  
+    book = get_object_or_404(Book, slug=slug)  
     return render(request, 'book_outlet/book_detail.html', {
         'title':book.title,
         'author':book.author,
