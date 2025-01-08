@@ -6,7 +6,7 @@
 {%block content%}
 <ol>
     {%for book in books%}
-    <li><a href="{{ url 'book_detail' book.slug }}">{{book.title}} </a>-Ratting:{{book.ratting}}</li>
+    <li><a href="{{ book.get_absolute_url }}">{{book.title}} </a>-Ratting:{{book.ratting}}</li>
     {% endfor %}
 </ol>
 {%endblock%}
